@@ -1,0 +1,56 @@
+@import "./variables";
+
+.navbar {
+  width: 100%;
+  padding: 50px 0;
+  @include flexContainer(row, space-around);
+  position: relative;
+  background: $black;
+  color: $white;
+  .navbar__menu {
+    @include flexItem(2rem, inline-block, $white);
+  }
+  .small-menu {
+    display: none;
+    position: relative;
+  }
+  @include responsive(tablet) {
+    flex-wrap: wrap;
+    .navbar__menu {
+      display: none;
+    }
+    .small-menu {
+      display: block;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+}
+.menu-list {
+  @include responsive(desktop) {
+    display: none;
+  }
+  @include responsive(tablet) {
+    display: block;
+  }
+  @include flexItem(0rem, block, $white);
+  min-width: 50vw;
+  min-height: 50vh;
+  background: $black;
+  color: $white;
+  text-align: center;
+
+  position: absolute;
+  top: 90px;
+  left: -50vw;
+  z-index: 100;
+  transition: 500ms ease;
+  li {
+    min-height: 10vh;
+  }
+}
+.menu-list.active {
+  left: 0;
+  transition: 500ms ease;
+  box-shadow: gray 5px 5px 15px;
+}

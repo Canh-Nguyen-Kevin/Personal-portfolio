@@ -1,0 +1,68 @@
+.resume-container {
+  @include flexContainer(row, space-between);
+  width: 70%;
+  min-height: 50vh;
+  margin: 20px auto;
+  padding: 20px;
+  color: $black;
+  box-shadow: 0 5px 10px gray;
+  .resume-list {
+    width: 30%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    p {
+      min-height: 10vh;
+      padding: 15px;
+      border-radius: 5vh;
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+    p.active {
+      background: $black;
+      border-radius: 5vh;
+      color: white;
+    }
+  }
+
+  .resume-details {
+    width: 70%;
+    padding-left: 20px;
+  }
+  @include responsive(tablet) {
+    @include flexContainer(column, space-between);
+    width: 100%;
+    .resume-list {
+      width: 100%;
+      display: flex;
+      overflow-x: scroll;
+    }
+    .resume-details {
+      width: 100%;
+    }
+  }
+}
+
+.resume-details {
+  position: relative;
+  .education,
+  .work {
+    width: 100%;
+    background: $white;
+  }
+}
+.hide {
+  display: none;
+}
+.info-container {
+  @include flexContainer(row, space-between);
+  margin: 25px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  .des {
+    padding-left: 1.5rem;
+  }
+  .text {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}
