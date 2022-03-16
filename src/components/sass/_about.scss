@@ -1,0 +1,43 @@
+@import "./variables";
+
+#about {
+  .content {
+    @include flexContainer(row, space-between);
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
+    .description {
+      @include flexContainer(column, space-around);
+      width: 50%;
+      .summary,
+      .description-list {
+        width: 100%;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        text-align: left;
+
+        p {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .rec-image {
+      width: 50%;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    @include responsive(tablet) {
+      width: 100%;
+      .rec-image {
+        display: none;
+      }
+      .description {
+        width: 100%;
+      }
+    }
+  }
+}

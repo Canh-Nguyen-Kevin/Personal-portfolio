@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./mediaQuiries";
+@import "./base";
+@import "./navbar";
+@import "./header";
+@import "./about";
+@import "./resume";
+@import "./portfolio";
+@import "./contact";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
