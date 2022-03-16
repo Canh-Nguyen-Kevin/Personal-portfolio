@@ -1,22 +1,33 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 import { FaIndent, FaWindowClose } from "react-icons/fa";
 const Menu = () => {
   return (
     <ul>
       <li>
-        <a href="#home">Home</a>
+        <Link to="/" spy={true} smooth={true} offset={50} duration={500}>
+          Home
+        </Link>
       </li>
       <li>
-        <a href="#about">About Me</a>
+        <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
+          About Me
+        </Link>
       </li>
       <li>
-        <a href="#resume">Resume</a>
+        <Link to="resume" spy={true} smooth={true} offset={0} duration={600}>
+          Resume
+        </Link>
       </li>
       <li>
-        <a href="#portfolio">Portfolio</a>
+        <Link to="portfolio" spy={true} smooth={true} offset={0} duration={700}>
+          Portfolio
+        </Link>
       </li>
       <li>
-        <a href="#contact">Contact Me</a>
+        <Link to="contact" spy={true} smooth={true} offset={0} duration={800}>
+          Contact Me
+        </Link>
       </li>
     </ul>
   );

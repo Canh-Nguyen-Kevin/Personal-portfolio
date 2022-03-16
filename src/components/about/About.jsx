@@ -19,14 +19,15 @@ const About = () => {
         </div>
         <div className="description">
           <div className="summary">
+            <h3>Full name: Nguyen Duc Canh</h3>
             <p>
-              lorem ipsum dolor Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Pariatur illo quae nesciunt laboriosam. Tempora
-              omnis expedita architecto commodi, in minima provident ab!
-              Repudiandae veritatis harum aspernatur libero id voluptate quo.
-              Ipsum iusto minima accusamus laborum magnam consequatur ipsa
-              incidunt facilis reprehenderit quis? Obcaecati omnis saepe
-              explicabo est autem, sunt
+              Canh is a freelance and a front-end developer based in Da Nang
+              city with a passion for building digital services/stuff he wants.
+              He has a knack for all things launching products, building
+              applications with front-end operations (and back-end operations in
+              the future). When not online, he loves hanging out with his
+              friends and traveling. Currently, he is on his journey to discover
+              the development environment.
             </p>
           </div>
 
@@ -34,24 +35,26 @@ const About = () => {
             <h3>Here Are A Few Highlights</h3>
 
             <p>
-              <FaArrowAltCircleRight className="icon-orange" /> lorem ipsum
-              dolor sit amet
+              <FaArrowAltCircleRight className="icon-orange" />I have worked
+              directly with Europian, Indian, Malaysian, Australian when i was
+              stil a mechatronic engineer
             </p>
             <p>
-              <FaArrowAltCircleRight className="icon-orange" /> lorem ipsum
-              dolor sit amet
+              <FaArrowAltCircleRight className="icon-orange" /> Learning
+              programming at a profesional center and all sources from the
+              internet
             </p>
             <p>
-              <FaArrowAltCircleRight className="icon-orange" /> lorem ipsum
-              dolor sit amet
+              <FaArrowAltCircleRight className="icon-orange" /> Interactive
+              Front End as per the design
             </p>
             <p>
-              <FaArrowAltCircleRight className="icon-orange" /> lorem ipsum
-              dolor sit amet
+              <FaArrowAltCircleRight className="icon-orange" /> Vanilla
+              JavaScript and ReactJs
             </p>
             <p>
-              <FaArrowAltCircleRight className="icon-orange" /> lorem ipsum
-              dolor sit amet
+              <FaArrowAltCircleRight className="icon-orange" /> Redux for State
+              Mnanagement
             </p>
           </div>
 

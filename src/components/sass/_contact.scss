@@ -1,0 +1,13 @@
+.contact-container {
+  width: 70%;
+  margin: 30px auto;
+  text-align: center;
+  .contact-social {
+    @include flexItem(0, inline-block, $black);
+  }
+}
+.copyright {
+  text-align: center;
+  color: $gray;
+  margin: 20px 0;
+}

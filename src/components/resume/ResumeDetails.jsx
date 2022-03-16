@@ -158,9 +158,6 @@ const ResumeDetails = ({ selected }) => {
                 </p>
                 <p className="des">{item.des}</p>
               </div>
-              <div className="right">
-                <button className="small-btn">{item.time}</button>
-              </div>
             </div>
           );
         })}
@@ -175,9 +172,6 @@ const ResumeDetails = ({ selected }) => {
                   {item.title}
                 </p>
                 <p className="des">{item.des}</p>
-              </div>
-              <div className="right">
-                <button className="small-btn">{item.time}</button>
               </div>
             </div>
           );

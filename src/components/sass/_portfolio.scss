@@ -1,0 +1,81 @@
+.portfolio-container {
+  width: 70%;
+  min-height: 50vh;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 10px gray;
+  .portfolio-card {
+    width: calc(33.33% - 20px);
+    height: 50%;
+    margin: 10px;
+    .card-image {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+      &:hover {
+        .card-btn {
+          display: flex;
+          animation: fade-in 0.5s ease both;
+        }
+      }
+    }
+  }
+  @include responsive(phone) {
+    .portfolio-card {
+      width: calc(50% - 20px);
+    }
+  }
+  @include responsive(smallPhone) {
+    .portfolio-card {
+      width: 100%;
+    }
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.card-btn {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  justify-content: space-around;
+  button {
+    width: 70px;
+    height: 30px;
+    background: $black;
+    border-radius: 10px;
+    border: none;
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+    &:hover {
+      a {
+        color: $orange;
+      }
+    }
+  }
+}
+@include responsive(tablet) {
+  .portfolio-container {
+    width: 100%;
+  }
+}
