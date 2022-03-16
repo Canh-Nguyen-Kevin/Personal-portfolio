@@ -54,7 +54,7 @@ const About = () => {
             </p>
             <p>
               <FaArrowAltCircleRight className="icon-orange" /> Redux for State
-              Mnanagement
+              Management
             </p>
           </div>
 
