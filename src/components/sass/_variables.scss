@@ -1,7 +1,9 @@
 $black: #170f21;
 $gray: rgb(75, 66, 66);
-$white: #ffffff;
-$orange: #f74e0f;
+$white: #f8f1f1;
+$orange1: #f74e0f;
+$orange2: rgb(64, 142, 206);
+$orange: rgb(17, 149, 226);
 
 @mixin flexContainer($direction, $justify) {
   display: flex;
@@ -10,22 +12,18 @@ $orange: #f74e0f;
   align-items: center;
 }
 
-@mixin flexItem($padding, $display, $color) {
+@mixin flexItem($margin, $display) {
   ul {
     list-style: none;
     cursor: pointer;
 
     li {
       display: $display;
-      padding-left: $padding;
+      margin-left: $margin;
       text-align: center;
       a {
-        text-decoration: none;
-        color: $color;
         &:hover {
           border-bottom: 1px solid $orange;
-        }
-        &:focus {
           color: $orange;
         }
       }
@@ -33,6 +31,11 @@ $orange: #f74e0f;
   }
 }
 
+.background {
+  background: $white;
+  color: $black;
+  padding: 20px 0;
+}
 .icon {
   color: $white;
   font-size: 1.5rem;
@@ -67,6 +70,7 @@ $orange: #f74e0f;
   color: $white;
   cursor: pointer;
   font-size: 1.2rem;
+  transition: all 0.5s ease;
   &:hover {
     border: 2px solid $orange;
     color: $orange;
@@ -84,10 +88,11 @@ $orange: #f74e0f;
   color: $white;
   cursor: pointer;
   font-size: 1.2rem;
+  transition: all 0.5s ease;
   &:hover {
     background: $white;
     color: $black;
-    border: 2px solid $white;
+    border: 2px solid $black;
   }
 }
 
@@ -103,7 +108,7 @@ $orange: #f74e0f;
 }
 .title {
   text-align: center;
-  margin-top: 10vh;
+  padding-top: 10vh;
   color: $black;
 }
 
@@ -112,6 +117,7 @@ $orange: #f74e0f;
   width: 200px;
   position: relative;
   margin: 10px auto;
+
   &::after,
   &::before {
     content: " ";
@@ -133,4 +139,8 @@ $orange: #f74e0f;
     top: -8px;
     z-index: 50;
   }
+}
+.selected {
+  color: $orange;
+  border-bottom: 2px solid $orange;
 }

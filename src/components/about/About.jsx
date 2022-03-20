@@ -1,11 +1,31 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { Link } from "react-scroll";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import picture from "../../assets/img/picture.jpg";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const About = () => {
+  const { ref, inView } = useInView({ threshold: 0.2 });
+  const animation = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        scale: 1,
+        opacity: 1,
+        transition: { type: "spring", duration: 2, bounce: 0.2 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        scale: 1.3,
+        opacity: 0.3,
+        transition: { type: "spring", duration: 1 },
+      });
+    }
+  }, [inView]);
   return (
-    <div id="about">
+    <div ref={ref} id="about" className="background">
       <div className="title">
         <h2 className="big-text">ABOUT ME</h2>
         <h4 className="small-text">Why Choose Me?</h4>
@@ -13,7 +33,7 @@ const About = () => {
           <div className="shape"></div>
         </div>
       </div>
-      <div className="content">
+      <motion.div animate={animation} className="content">
         <div className="rec-image">
           <img src={picture} alt="picture" />
         </div>
@@ -21,7 +41,7 @@ const About = () => {
           <div className="summary">
             <h3>Full name: Nguyen Duc Canh</h3>
             <p>
-              Canh is a freelance and a front-end developer based in Da Nang
+              Canh is a freelancer and a front-end developer based in Da Nang
               city with a passion for building digital services/stuff he wants.
               He has a knack for all things launching products, building
               applications with front-end operations (and back-end operations in
@@ -36,12 +56,12 @@ const About = () => {
 
             <p>
               <FaArrowAltCircleRight className="icon-orange" />I have worked
-              directly with Europian, Indian, Malaysian, Australian when i was
-              stil a mechatronic engineer
+              directly with European, Indian, Malaysian, Australian when i was
+              still a mechatronics engineer
             </p>
             <p>
               <FaArrowAltCircleRight className="icon-orange" /> Learning
-              programming at a profesional center and all sources from the
+              programming at a professional center and all sources from the
               internet
             </p>
             <p>
@@ -59,11 +79,26 @@ const About = () => {
           </div>
 
           <div className="about__button">
-            <button className="trans-btn">Hire Me</button>
-            <button className="orange-btn">Get Resume</button>
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={600}
+            >
+              <button className="trans-btn">Contact Me</button>
+            </Link>
+
+            <a
+              href="/files/Canh Nguyen-Front end developer.pdf"
+              target="_blank"
+              download
+            >
+              <button className="orange-btn">Get Resume</button>
+            </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

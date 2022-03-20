@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaGithub, FaHandPointRight } from "react-icons/fa";
 
 const cardsArr = [
@@ -40,8 +42,26 @@ const cardsArr = [
 
 const Portfolio = () => {
   const cards = cardsArr;
+  const { ref, inView } = useInView({ threshold: 0.2 });
+  const animation = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        opacity: 1,
+        transition: { type: "spring", duration: 1.5, bounce: 0.2 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        x: "-100vw",
+
+        transition: { type: "spring", duration: 1 },
+      });
+    }
+  }, [inView]);
   return (
-    <div id="portfolio">
+    <div ref={ref} id="portfolio" className="background">
       <div className="title">
         <h2 className="big-text">PORTFOLIO</h2>
         <h4 className="small-text">My Personal Projects in Details</h4>
@@ -49,7 +69,7 @@ const Portfolio = () => {
           <div className="shape"></div>
         </div>
       </div>
-      <div className="portfolio-container">
+      <motion.div animate={animation} className="portfolio-container">
         {cards.map((card) => {
           return (
             <div className="portfolio-card" key={card.id}>
@@ -77,7 +97,7 @@ const Portfolio = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 };

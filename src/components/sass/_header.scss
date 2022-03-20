@@ -9,6 +9,7 @@
 .header {
   aspect-ratio: 960/400;
   width: 100%;
+  margin-top: 80px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -32,7 +33,7 @@
   height: 50%;
   position: relative;
   .image-container {
-    width: 45%;
+    width: 30%;
     position: absolute;
     left: 20%;
     bottom: 20%;
@@ -52,7 +53,7 @@
   }
 }
 .header__text--social {
-  @include flexItem(1rem, inline-block, $white);
+  @include flexItem(1rem, inline-block);
 }
 .wave-background {
   background-image: url(../../assets/svg/wave.svg);

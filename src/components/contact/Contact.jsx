@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaFacebookSquare,
   FaGooglePlusSquare,
@@ -9,7 +10,7 @@ import {
 
 const Contact = () => {
   return (
-    <div id="contact">
+    <div id="contact" className="background">
       <div className="title">
         <h2 className="big-text">CONTACT ME</h2>
         <h4 className="small-text">Let's keep in touch</h4>
@@ -17,7 +18,7 @@ const Contact = () => {
           <div className="shape"></div>
         </div>
       </div>
-      <div className="contact-container">
+      <motion.div className="contact-container">
         <div className="contact-mail">
           <p>
             Send your message to <strong>nguyencanh127@gmail.com</strong>
@@ -53,7 +54,7 @@ const Contact = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="copyright">
         &copy; 2022 Canh Nguyen. All Rights Reserved.
       </div>
