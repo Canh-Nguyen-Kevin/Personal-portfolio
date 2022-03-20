@@ -3,7 +3,7 @@
   margin: 30px auto;
   text-align: center;
   .contact-social {
-    @include flexItem(0, inline-block, $black);
+    @include flexItem(0, inline-block);
   }
 }
 .copyright {

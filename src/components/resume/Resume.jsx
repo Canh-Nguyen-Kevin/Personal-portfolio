@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   FaUserGraduate,
   FaRegHandshake,
@@ -9,8 +11,27 @@ import {
 import ResumeDetails from "./ResumeDetails";
 const Resume = () => {
   const [selected, setSelected] = useState("education");
+  const { ref, inView } = useInView({ threshold: 0.2 });
+  const animation = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        scale: 1,
+        opacity: 1,
+        transition: { type: "spring", duration: 1.5, bounce: 0.1 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        scale: 1.2,
+        opacity: 0.3,
+
+        transition: { type: "spring", duration: 1 },
+      });
+    }
+  }, [inView]);
   return (
-    <div id="resume">
+    <div ref={ref} id="resume" className="background">
       <div className="title">
         <h2 className="big-text">RESUME</h2>
         <h4 className="small-text">My Formal Bio Details</h4>
@@ -18,7 +39,7 @@ const Resume = () => {
           <div className="shape"></div>
         </div>
       </div>
-      <div className="resume-container">
+      <motion.div animate={animation} className="resume-container">
         <div className="resume-list">
           <p
             className={selected === "education" ? "active" : ""}
@@ -67,7 +88,7 @@ const Resume = () => {
           </p>
         </div>
         <ResumeDetails selected={selected} />
-      </div>
+      </motion.div>
     </div>
   );
 };

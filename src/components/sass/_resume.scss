@@ -2,20 +2,25 @@
   @include flexContainer(row, space-between);
   width: 70%;
   min-height: 50vh;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
+  border-radius: 20px;
   color: $black;
   box-shadow: 0 5px 10px gray;
   .resume-list {
     width: 30%;
     font-size: 1.2rem;
     font-weight: bold;
+
     p {
       min-height: 10vh;
       padding: 15px;
       border-radius: 5vh;
       cursor: pointer;
       transition: all 0.5s ease;
+      &:hover {
+        color: $orange;
+      }
     }
     p.active {
       background: $black;

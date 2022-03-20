@@ -1,5 +1,6 @@
 import React from "react";
 import { FaDotCircle } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const educationArr = [
   {
@@ -102,6 +103,17 @@ const interestArr = [
   },
 ];
 
+const detailVariants = {
+  open: {
+    opacity: [0, 1],
+
+    transition: { duration: 1 },
+  },
+  close: {
+    opacity: 0,
+  },
+  exit: { opacity: 0 },
+};
 const ResumeDetails = ({ selected }) => {
   const education = educationArr;
   const work = workArr;
@@ -110,88 +122,116 @@ const ResumeDetails = ({ selected }) => {
   const interest = interestArr;
   return (
     <div className="resume-details">
-      <div className={selected === "education" ? "education" : "hide"}>
-        {education.map((item) => {
-          return (
-            <div id={item.id} className="info-container">
-              <div className="left">
-                <p className="orange">
-                  <FaDotCircle className="icon-orange" />
-                  {item.title}
-                </p>
-                <p className="des">{item.des}</p>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          variants={detailVariants}
+          animate={selected === "education" ? "open" : "close"}
+          exit="exit"
+          className={selected === "education" ? "education" : "hide"}
+        >
+          {education.map((item) => {
+            return (
+              <div id={item.id} className="info-container">
+                <div className="left">
+                  <p className="orange">
+                    <FaDotCircle className="icon-orange" />
+                    {item.title}
+                  </p>
+                  <p className="des">{item.des}</p>
+                </div>
+                <div className="right">
+                  <button className="small-btn">{item.time}</button>
+                </div>
               </div>
-              <div className="right">
-                <button className="small-btn">{item.time}</button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </motion.div>
 
-      <div className={selected === "work" ? "work" : "hide"}>
-        {work.map((item) => {
-          return (
-            <div id={item.id} className="info-container">
-              <div className="left">
-                <p className="orange">
-                  <FaDotCircle className="icon-orange" />
-                  {item.title}
-                </p>
-                <p className="des">{item.des}</p>
+        <motion.div
+          variants={detailVariants}
+          animate={selected === "work" ? "open" : "close"}
+          exit="exit"
+          className={selected === "work" ? "work" : "hide"}
+        >
+          {work.map((item) => {
+            return (
+              <div id={item.id} className="info-container">
+                <div className="left">
+                  <p className="orange">
+                    <FaDotCircle className="icon-orange" />
+                    {item.title}
+                  </p>
+                  <p className="des">{item.des}</p>
+                </div>
+                <div className="right">
+                  <button className="small-btn">{item.time}</button>
+                </div>
               </div>
-              <div className="right">
-                <button className="small-btn">{item.time}</button>
+            );
+          })}
+        </motion.div>
+
+        <motion.div
+          variants={detailVariants}
+          animate={selected === "skills" ? "open" : "close"}
+          exit="exit"
+          className={selected === "skills" ? "skills" : "hide"}
+        >
+          {skills.map((item) => {
+            return (
+              <div id={item.id} className="info-container">
+                <div className="left">
+                  <p className="orange">
+                    <FaDotCircle className="icon-orange" />
+                    {item.title}
+                  </p>
+                  <p className="des">{item.des}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className={selected === "skills" ? "skills" : "hide"}>
-        {skills.map((item) => {
-          return (
-            <div id={item.id} className="info-container">
-              <div className="left">
-                <p className="orange">
-                  <FaDotCircle className="icon-orange" />
-                  {item.title}
-                </p>
-                <p className="des">{item.des}</p>
+            );
+          })}
+        </motion.div>
+        <motion.div
+          variants={detailVariants}
+          animate={selected === "projects" ? "open" : "close"}
+          exit="exit"
+          className={selected === "projects" ? "projects" : "hide"}
+        >
+          {projects.map((item) => {
+            return (
+              <div id={item.id} className="info-container">
+                <div className="left">
+                  <p className="orange">
+                    <FaDotCircle className="icon-orange" />
+                    {item.title}
+                  </p>
+                  <p className="des">{item.des}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className={selected === "projects" ? "projects" : "hide"}>
-        {projects.map((item) => {
-          return (
-            <div id={item.id} className="info-container">
-              <div className="left">
-                <p className="orange">
-                  <FaDotCircle className="icon-orange" />
-                  {item.title}
-                </p>
-                <p className="des">{item.des}</p>
+            );
+          })}
+        </motion.div>
+        <motion.div
+          variants={detailVariants}
+          animate={selected === "interest" ? "open" : "close"}
+          exit="exit"
+          className={selected === "interest" ? "interest" : "hide"}
+        >
+          {interest.map((item) => {
+            return (
+              <div id={item.id} className="info-container">
+                <div className="left">
+                  <p className="orange">
+                    <FaDotCircle className="icon-orange" />
+                    {item.title}
+                  </p>
+                  <p className="text">{item.des}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className={selected === "interest" ? "interest" : "hide"}>
-        {interest.map((item) => {
-          return (
-            <div id={item.id} className="info-container">
-              <div className="left">
-                <p className="orange">
-                  <FaDotCircle className="icon-orange" />
-                  {item.title}
-                </p>
-                <p className="text">{item.des}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
