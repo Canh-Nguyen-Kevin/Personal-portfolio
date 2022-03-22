@@ -23,36 +23,36 @@ const Contact = () => {
           <p>
             Send your message to <strong>nguyencanh127@gmail.com</strong>
           </p>
-          <p>OR</p>
-          <div className="contact-social">
-            <ul>
-              <li>
-                <a href="">
-                  <FaFacebookSquare className="icon-black" />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FaGooglePlusSquare className="icon-black" />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FaLinkedin className="icon-black" />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FaTwitterSquare className="icon-black" />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FaGithubSquare className="icon-black" />
-                </a>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <p>OR</p>
+        <div className="contact-social">
+          <ul>
+            <li>
+              <a href="">
+                <FaFacebookSquare className="icon-black" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaGooglePlusSquare className="icon-black" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaLinkedin className="icon-black" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaTwitterSquare className="icon-black" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaGithubSquare className="icon-black" />
+              </a>
+            </li>
+          </ul>
         </div>
       </motion.div>
       <div className="copyright">
