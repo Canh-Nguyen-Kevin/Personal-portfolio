@@ -21,6 +21,15 @@
     display: none;
     position: relative;
   }
+  .navbar__logo {
+    cursor: pointer;
+    &:hover {
+      .nav-iconBlack,
+      .nav-iconWhite {
+        animation: wave 2s linear infinite;
+      }
+    }
+  }
   @include responsive(tablet) {
     flex-wrap: wrap;
     .navbar__menu {
@@ -70,4 +79,31 @@
   left: 0;
   transition: 500ms ease;
   box-shadow: gray 5px 5px 15px;
+}
+.nav-iconWhite {
+  color: $white;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.nav-iconBlack {
+  color: $black;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+@keyframes wave {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  25% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-90deg);
+  }
+  75% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(90deg);
+  }
 }

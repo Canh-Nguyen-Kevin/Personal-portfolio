@@ -26,8 +26,11 @@
 
     .rec-image {
       width: 50%;
+      padding: 20px;
+
       img {
         width: 100%;
+        border-radius: 20px;
         object-fit: cover;
       }
     }

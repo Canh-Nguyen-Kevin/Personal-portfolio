@@ -21,12 +21,12 @@ $orange: rgb(17, 149, 226);
       display: $display;
       margin-left: $margin;
       text-align: center;
-      a {
-        &:hover {
-          border-bottom: 1px solid $orange;
-          color: $orange;
-        }
+      // a {
+      &:hover {
+        border-bottom: 1px solid $orange;
+        color: $orange;
       }
+      // }
     }
   }
 }
@@ -36,24 +36,29 @@ $orange: rgb(17, 149, 226);
   color: $black;
   padding: 20px 0;
 }
+
 .icon {
   color: $white;
   font-size: 1.5rem;
   margin-right: 0.8rem;
+  vertical-align: middle;
 }
 .icon-white {
   color: $white;
   margin-right: 0.5rem;
+  vertical-align: middle;
 }
 .icon-orange {
   color: $orange;
   margin-right: 0.5rem;
+  vertical-align: middle;
 }
 
 .icon-black {
   color: $black;
   font-size: 1.5rem;
   margin-right: 0.8rem;
+  vertical-align: middle;
 }
 .orange {
   color: $orange;

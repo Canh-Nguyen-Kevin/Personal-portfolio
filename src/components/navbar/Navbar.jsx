@@ -105,8 +105,16 @@ const Navbar = () => {
 
         <div className="navbar__logo">
           <h1>
-            <FaPaw className={changeBg ? "icon-black" : "icon-white"} />
-            CANH NGUYEN
+            <Link
+              to="header"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              <FaPaw className={changeBg ? "nav-iconBlack" : "nav-iconWhite"} />
+              CANH NGUYEN
+            </Link>
           </h1>
         </div>
         <div className="navbar__menu">
