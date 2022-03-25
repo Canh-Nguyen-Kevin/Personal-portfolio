@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import Typing from "./Typing";
-import avatar from "../../assets/img/avatar1.jpg";
+import avatar from "../../assets/img/avatar1.JPG";
 import HeartIcon from "../animateItems/HeartIcon";
 
 const Header = () => {
