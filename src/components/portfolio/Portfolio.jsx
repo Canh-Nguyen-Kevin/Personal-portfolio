@@ -10,6 +10,8 @@ const cardsArr = [
     title: "Game Cards Ecommerce Shop",
     description:
       "A shop that selling games and all kind of cards for learning or entertainment",
+    page: "http://game-shop-heroku.herokuapp.com/",
+    source: "https://github.com/Canh-Nguyen-Kevin/game-shop-heroku",
   },
   {
     id: 2,
@@ -17,6 +19,8 @@ const cardsArr = [
     title: "Covid 19 Tracker App",
     description:
       "An app that show the statistics about Covid-19 of every country",
+    page: "https://covid-22-tracker.netlify.app/",
+    source: "https://github.com/Canh-Nguyen-Kevin/covid19-tracker",
   },
   {
     id: 3,
@@ -24,12 +28,16 @@ const cardsArr = [
     title: "Memory Match Game",
     description:
       "A funny game that can train your memory by matching pairs of cards",
+    page: "http://game-shop-heroku.herokuapp.com/",
+    source: "https://github.com/Canh-Nguyen-Kevin/game-shop-heroku",
   },
   {
     id: 4,
     image: "./img/landing.png",
     title: "Landing Page",
     description: "A normal responsive landing page that every website needed",
+    page: "http://game-shop-heroku.herokuapp.com/",
+    source: "https://github.com/Canh-Nguyen-Kevin/game-shop-heroku",
   },
   {
     id: 5,
@@ -37,6 +45,8 @@ const cardsArr = [
     title: "Portfolio Page",
     description:
       "It is this page, i use this to show my skills, bio and resume",
+    page: "https://canhnguyen-portfolio.netlify.app/",
+    source: "https://github.com/Canh-Nguyen-Kevin/Personal-portfolio",
   },
 ];
 
@@ -77,13 +87,13 @@ const Portfolio = () => {
                 <img src={card.image} alt="image" />
                 <div className="card-btn">
                   <button>
-                    <a href="">
+                    <a href={card.page} target="_blank">
                       <FaHandPointRight className="icon-white" />
                       Visit
                     </a>
                   </button>
                   <button>
-                    <a href="">
+                    <a href={card.source} target="_blank">
                       <FaGithub className="icon-white" />
                       Source
                     </a>
