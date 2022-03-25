@@ -90,7 +90,7 @@ const About = () => {
             </Link>
 
             <a
-              href="/files/Canh Nguyen-Front end developer.pdf"
+              href="/files/Canh Nguyen - Front end Dev.pdf"
               target="_blank"
               download
             >

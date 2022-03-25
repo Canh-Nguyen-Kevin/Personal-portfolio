@@ -45,6 +45,7 @@
 .navbar-container.active {
   background: rgba(248, 241, 241, 0.8);
   color: $black;
+  box-shadow: 0 5px 10px gray;
   .navbar__menu {
     @include flexItem(2rem, inline-block);
   }

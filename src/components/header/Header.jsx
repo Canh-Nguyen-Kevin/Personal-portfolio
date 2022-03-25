@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import Typing from "./Typing";
-import avatar from "../../assets/img/avatar.JPG";
+import avatar from "../../assets/img/avatar.jpg";
 import HeartIcon from "../animateItems/HeartIcon";
 
 const Header = () => {
@@ -23,7 +23,7 @@ const Header = () => {
           </Link>
 
           <a
-            href="/files/Canh Nguyen-Front end developer.pdf"
+            href="/files/Canh Nguyen - Front end Dev.pdf"
             target="_blank"
             download
           >

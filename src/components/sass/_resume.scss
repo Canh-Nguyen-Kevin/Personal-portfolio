@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 20px;
   border-radius: 20px;
+
   color: $black;
   box-shadow: 0 5px 10px gray;
   .resume-list {
@@ -45,9 +46,7 @@
       display: flex;
       overflow-x: scroll;
     }
-    // ::-webkit-scrollbar {
-    //   width: 0px;
-    // }
+
     .resume-details {
       width: 100%;
     }
